@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Залізничний вокзал Вінниця</title>
+</head>
+<body style="margin:0; font-family:Arial;">
+
+<div style="background:#24476C; color:white; padding:20px;">
+ <h1>Залізничний вокзал Вінниця</h1>
+ <nav>
+ <a href="#home" style="color:white;">Головна</a> |
+ <a href="#about" style="color:white;">Про вокзал</a> |
+ <a href="#trains" style="color:white;">Потяги</a> |
+ <a href="#schedule" style="color:white;">Розклад</a>
+ </nav>
+</div>
+
+<div class="page" id="home" style="display:flex; min-height:300px;">
+ <div style="flex:1; background:#DCEAF6; padding:20px;">
+ <h3>Інформація</h3>
+ <p>Місто: Вінниця</p>
+ <p>Станція: Вінниця</p>
+ </div>
+ <div style="flex:3; padding:20px;">
+ <h2>Ласкаво просимо!</h2>
+ <p>Вітаємо на сайті залізничного вокзалу Вінниця.</p>
+ <p>Тут можна дізнатися про вокзал, потяги та розклад руху.</p>
+ </div>
+</div>
+
+<div class="page" id="about" style="display:none; min-height:300px;">
+ <div style="flex:1; background:#DCEAF6; padding:20px;">
+ <h3>Коротко</h3>
+ <p>Платформи</p>
+ <p>Каси</p>
+ <p>Зал очікування</p>
+ </div>
+ <div style="flex:3; padding:20px;">
+ <h2>Про вокзал</h2>
+ <p>Вокзал розташований у місті Вінниця.</p>
+ <p>Призначений для обслуговування пасажирів і відправлення потягів.</p>
+ </div>
+</div>
+
+<div class="page" id="trains" style="display:none; min-height:300px;">
+ <div style="flex:1; background:#DCEAF6; padding:20px;">
+ <h3>Типи потягів</h3>
+ <p>Швидкісні</p>
+ <p>Пасажирські</p>
+ <p>Приміські</p>
+ </div>
+ <div style="flex:3; padding:20px;">
+ <h2>Приклади потягів</h2>
+ <table border="1" cellpadding="8">
+ <tr><th>Тип</th><th>Опис</th></tr>
+ <tr><td>Інтерсіті</td><td>Швидкісний</td></tr>
+ <tr><td>Нічний швидкий</td><td>Пасажирський</td></tr>
+ <tr><td>Електричка</td><td>Приміський</td></tr>
+ </table>
+ </div>
+</div>
+
+<div class="page" id="schedule" style="display:none; min-height:300px;">
+ <div style="flex:1; background:#DCEAF6; padding:20px;">
+ <h3>Рейси</h3>
+ <p>Навчальний розклад</p>
+ </div>
+ <div style="flex:3; padding:20px;">
+ <h2>Розклад руху</h2>
+ <table border="1" cellpadding="8">
+ <tr><th>Потяг</th><th>Напрямок</th><th>Відправлення</th></tr>
+ <tr><td>101</td><td>Київ</td><td>09:00</td></tr>
+ <tr><td>102</td><td>Львів</td><td>12:30</td></tr>
+ <tr><td>103</td><td>Одеса</td><td>16:00</td></tr>
+ </table>
+ <p>Розклад створено для навчального прикладу.</p>
+ </div>
+</div>
+
+<div style="background:#24476C; color:white; text-align:center; padding:10px;">
+ © 2026 Вокзал Вінниця
+</div>
+
+<script>
+ function show() {
+ var id = location.hash.slice(1) || "home";
+ if (!document.getElementById(id)) id = "home";
+ document.querySelectorAll(".page").forEach(function (p) {
+ p.style.display = p.id === id ? "flex" : "none";
+ });
+ }
+ window.addEventListener("hashchange", show);
+ show();
+</script>
+</body>
+</html>
